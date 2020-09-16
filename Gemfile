@@ -71,3 +71,7 @@ gem 'jquery-rails'
 
 # Bootstrap
 gem 'bootstrap-sass'
+
+# Slim
+gem 'slim-rails'
+gem 'html2slim'
