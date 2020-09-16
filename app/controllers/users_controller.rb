@@ -4,8 +4,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    # binding.pry
     @user=User.new(user_params)
+    # binding.pry
 
     if @user.save
       redirect_to root_path, success: "登録が完了しました(ユーザー名: #{@user.name})"
@@ -18,6 +18,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end
