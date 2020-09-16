@@ -1,0 +1,14 @@
+.users-new-wrapper
+  .container
+    .row
+      .col-md-offset-4.col-md-4.users-new-container
+        h1.text-center.text-white Sign up
+        = form_with model: @user, local: true do |f|
+          .form-group
+            = f.label :name, class: 'text-white'
+            = f.text_field :name, class: 'form-control'
+          .form-group
+            = f.label :email, class: 'text-white'
+            = f.text_field :email, class: 'form-control'
+          = f.submit "登録", class: 'btn-block btn-white'
+        = link_to 'ログインはこちら', '#', class: 'text-white'
