@@ -12,3 +12,8 @@ html
       .alert class="alert-#{key}"
         = value
     = yield
+    
+    javascript:
+      $(function(){
+        $(".alert").fadeOut(5000);
+      });
