@@ -3,7 +3,7 @@
     .row
       .col-md-offset-4.col-md-4.users-new-container
         h1.text-center.text-white Log in
-        = form_with do |f|
+        = form_with scope: :session, local: true do |f|
           .form-group
             = f.label :email, class: 'text-white'
             = f.text_field :email, class: 'form-control'
