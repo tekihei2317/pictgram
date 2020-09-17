@@ -14,9 +14,19 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    log_out
+    redirect_to root_path, info: 'ログアウトしました'
+  end
+
   private
 
   def log_in(user)
     session[:user_id]=user.id
+  end
+
+  def log_out
+    reset_session
+    @current_user=nil
   end
 end
