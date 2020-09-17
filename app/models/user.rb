@@ -8,6 +8,8 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :email, format: { with: VALID_EMAIL_REGEX }
 
+  VALID_PASSWORD_REGEX=/(?=.*?[a-z])(?=.*?\d).{8,32}/
   validates :password, length: { in: 8..32 }
+  validates :password, format: { with: VALID_PASSWORD_REGEX }
 
 end
