@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
+  has_many :topics
 
   validates :name, presence: true
   validates :name, length: { maximum: 15 }
