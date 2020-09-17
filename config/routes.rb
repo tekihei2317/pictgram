@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'topics/new'
   # PagesController
   root to: 'pages#index'
   get 'pages/index'
@@ -13,4 +12,6 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
+  # TopicsController
+  resources :topics
 end
