@@ -15,6 +15,10 @@ class TopicsController < ApplicationController
     end
   end
 
+  def index
+    @topics=Topic.all
+  end
+
   private
 
   def topic_params
