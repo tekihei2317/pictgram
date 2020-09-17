@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'topics/new'
   # PagesController
   root to: 'pages#index'
   get 'pages/index'

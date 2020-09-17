@@ -75,3 +75,6 @@ gem 'bootstrap-sass'
 # Slim
 gem 'slim-rails'
 gem 'html2slim'
+
+# Handle images
+gem 'carrierwave'
