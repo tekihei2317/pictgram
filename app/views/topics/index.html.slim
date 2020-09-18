@@ -21,3 +21,10 @@
             = image_tag 'icons/comment.png', class: 'topic-index-icon'
             p.topic-text
               = topic.description
+            
+            - comment_count=topic.comments.count
+            h2= "#{comment_count}件のコメント"
+            - topic.comments.each do |comment|
+              .topic-comment
+                = "#{comment.user.name}: "
+                = comment.content
