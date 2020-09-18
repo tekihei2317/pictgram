@@ -1,0 +1,11 @@
+.comments-new-wrapper
+  .container
+    .row
+      .col-md-offset-4.col-md-4.users-new-container
+        h1.text-center Add Comment
+        = form_with model: @comment, local: true do |f|
+          .form-group
+            = f.label :content, 'コメント'
+            = f.text_area :content, class: 'form-control'
+            = f.hidden_field :topic_id, :value=>params[:topic_id]
+          = f.submit '投稿する', class: 'btn btn-block btn-black'
