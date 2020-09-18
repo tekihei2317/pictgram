@@ -16,6 +16,8 @@
               / いいねしている場合
               = link_to favorites_path(topic_id: topic.id), method: :delete do
                 = image_tag 'icons/heart-black.png', class: 'topic-index-icon heart-liked'
+            .favorite-count
+              = topic.favorite_users.count
             = image_tag 'icons/comment.png', class: 'topic-index-icon'
             p.topic-text
               = topic.description
