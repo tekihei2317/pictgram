@@ -1,4 +1,6 @@
 class TopicsController < ApplicationController
+  before_action :require_login, only: :new
+
   def new
     @topic=Topic.new
   end

@@ -10,4 +10,10 @@ class ApplicationController < ActionController::Base
   def logged_in?
     !current_user.nil?
   end
+
+  private
+
+  def require_login
+    redirect_to root_path, warning: 'ログインしてください' if current_user.nil?
+  end
 end
