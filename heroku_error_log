@@ -1,0 +1,100 @@
+2020-09-19T03:07:30.770916+00:00 app[web.1]: I, [2020-09-19T03:07:30.770841 #4]  INFO -- : [20b0cc5e-2e77-4230-ab71-7b7d1a0a701c] Processing by TopicsController#index as HTML
+2020-09-19T03:07:30.779735+00:00 app[web.1]: /app/vendor/bundle/ruby/2.7.0/gems/activesupport-5.2.4.4/lib/active_support/messages/rotator.rb:28: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+2020-09-19T03:07:30.779806+00:00 app[web.1]: /app/vendor/bundle/ruby/2.7.0/gems/activesupport-5.2.4.4/lib/active_support/messages/rotator.rb:6: warning: The called method `initialize' is defined here
+2020-09-19T03:07:30.781512+00:00 app[web.1]: /app/vendor/bundle/ruby/2.7.0/gems/actionview-5.2.4.4/lib/action_view/view_paths.rb:11: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+2020-09-19T03:07:30.781543+00:00 app[web.1]: /app/vendor/bundle/ruby/2.7.0/gems/actionview-5.2.4.4/lib/action_view/lookup_context.rb:128: warning: The called method `template_exists?' is defined here
+2020-09-19T03:07:30.784862+00:00 app[web.1]: I, [2020-09-19T03:07:30.784768 #4]  INFO -- : [20b0cc5e-2e77-4230-ab71-7b7d1a0a701c]   Rendering topics/index.html.slim within layouts/application
+2020-09-19T03:07:30.850792+00:00 app[web.1]: /app/vendor/bundle/ruby/2.7.0/gems/activemodel-5.2.4.4/lib/active_model/type/integer.rb:13: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+2020-09-19T03:07:30.850794+00:00 app[web.1]: /app/vendor/bundle/ruby/2.7.0/gems/activemodel-5.2.4.4/lib/active_model/type/value.rb:8: warning: The called method `initialize' is defined here
+2020-09-19T03:07:30.851091+00:00 app[web.1]: /app/vendor/bundle/ruby/2.7.0/gems/activerecord-5.2.4.4/lib/active_record/connection_adapters/postgresql/oid/specialized_string.rb:12: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+2020-09-19T03:07:30.851092+00:00 app[web.1]: /app/vendor/bundle/ruby/2.7.0/gems/activemodel-5.2.4.4/lib/active_model/type/value.rb:8: warning: The called method `initialize' is defined here
+2020-09-19T03:07:30.876352+00:00 app[web.1]: D, [2020-09-19T03:07:30.876213 #4] DEBUG -- : [20b0cc5e-2e77-4230-ab71-7b7d1a0a701c]   [1m[36mTopic Load (1.9ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+2020-09-19T03:07:30.916478+00:00 app[web.1]: D, [2020-09-19T03:07:30.915886 #4] DEBUG -- : [20b0cc5e-2e77-4230-ab71-7b7d1a0a701c]   [1m[36mFavorite Load (1.5ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."topic_id" = $1[0m  [["topic_id", "5"]]
+2020-09-19T03:07:30.928567+00:00 app[web.1]: D, [2020-09-19T03:07:30.928444 #4] DEBUG -- : [20b0cc5e-2e77-4230-ab71-7b7d1a0a701c]   [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+2020-09-19T03:07:30.939264+00:00 app[web.1]: D, [2020-09-19T03:07:30.939162 #4] DEBUG -- : [20b0cc5e-2e77-4230-ab71-7b7d1a0a701c]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+2020-09-19T03:07:30.940126+00:00 app[web.1]: /app/vendor/bundle/ruby/2.7.0/gems/activerecord-5.2.4.4/lib/active_record/relation/delegation.rb:132: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+2020-09-19T03:07:30.940127+00:00 app[web.1]: /app/vendor/bundle/ruby/2.7.0/gems/activerecord-5.2.4.4/lib/active_record/relation.rb:25: warning: The called method `initialize' is defined here
+2020-09-19T03:07:30.949340+00:00 heroku[router]: at=info method=GET path="/topics" host=powerful-taiga-87200.herokuapp.com request_id=20b0cc5e-2e77-4230-ab71-7b7d1a0a701c fwd="150.249.202.186" dyno=web.1 connect=0ms service=186ms status=500 bytes=1827 protocol=https
+2020-09-19T03:07:30.949655+00:00 app[web.1]: D, [2020-09-19T03:07:30.949568 #4] DEBUG -- : [20b0cc5e-2e77-4230-ab71-7b7d1a0a701c]   [1m[35m (6.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."topic_id" = $1[0m  [["topic_id", "5"]]
+2020-09-19T03:07:30.950299+00:00 app[web.1]: I, [2020-09-19T03:07:30.950207 #4]  INFO -- : [20b0cc5e-2e77-4230-ab71-7b7d1a0a701c]   Rendered topics/index.html.slim within layouts/application (165.2ms)
+2020-09-19T03:07:30.950486+00:00 app[web.1]: I, [2020-09-19T03:07:30.950428 #4]  INFO -- : [20b0cc5e-2e77-4230-ab71-7b7d1a0a701c] Completed 500 Internal Server Error in 179ms (ActiveRecord: 62.2ms)
+2020-09-19T03:07:30.951213+00:00 app[web.1]: F, [2020-09-19T03:07:30.951157 #4] FATAL -- : [20b0cc5e-2e77-4230-ab71-7b7d1a0a701c]
+2020-09-19T03:07:30.951267+00:00 app[web.1]: F, [2020-09-19T03:07:30.951216 #4] FATAL -- : [20b0cc5e-2e77-4230-ab71-7b7d1a0a701c] ActionView::Template::Error (PG::UndefinedFunction: ERROR:  operator does not exist: bigint = character varying
+2020-09-19T03:07:30.951268+00:00 app[web.1]: LINE 1: ...OM "users" INNER JOIN "favorites" ON "users"."id" = "favorit...
+2020-09-19T03:07:30.951269+00:00 app[web.1]: ^
+2020-09-19T03:07:30.951270+00:00 app[web.1]: HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2020-09-19T03:07:30.951270+00:00 app[web.1]: : SELECT COUNT(*) FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."topic_id" = $1):
+2020-09-19T03:07:30.951409+00:00 app[web.1]: F, [2020-09-19T03:07:30.951358 #4] FATAL -- : [20b0cc5e-2e77-4230-ab71-7b7d1a0a701c]     18:               = link_to favorites_path(topic_id: topic.id), method: :delete do
+2020-09-19T03:07:30.951409+00:00 app[web.1]: [20b0cc5e-2e77-4230-ab71-7b7d1a0a701c]     19:                 = image_tag 'icons/heart-black.png', class: 'topic-index-icon heart-liked'
+2020-09-19T03:07:30.951410+00:00 app[web.1]: [20b0cc5e-2e77-4230-ab71-7b7d1a0a701c]     20:             .favorite-count
+2020-09-19T03:07:30.951410+00:00 app[web.1]: [20b0cc5e-2e77-4230-ab71-7b7d1a0a701c]     21:               = topic.favorite_users.count
+2020-09-19T03:07:30.951411+00:00 app[web.1]: [20b0cc5e-2e77-4230-ab71-7b7d1a0a701c]     22:
+2020-09-19T03:07:30.951411+00:00 app[web.1]: [20b0cc5e-2e77-4230-ab71-7b7d1a0a701c]     23:             / コメント作成
+2020-09-19T03:07:30.951411+00:00 app[web.1]: [20b0cc5e-2e77-4230-ab71-7b7d1a0a701c]     24:             = link_to new_comment_path(topic_id: topic.id)
+2020-09-19T03:07:30.951449+00:00 app[web.1]: F, [2020-09-19T03:07:30.951406 #4] FATAL -- : [20b0cc5e-2e77-4230-ab71-7b7d1a0a701c]
+2020-09-19T03:07:30.951492+00:00 app[web.1]: F, [2020-09-19T03:07:30.951453 #4] FATAL -- : [20b0cc5e-2e77-4230-ab71-7b7d1a0a701c] app/views/topics/index.html.slim:21:in `block in _app_views_topics_index_html_slim__794116442067868133_18700'
+2020-09-19T03:07:30.951492+00:00 app[web.1]: [20b0cc5e-2e77-4230-ab71-7b7d1a0a701c] app/views/topics/index.html.slim:3:in `_app_views_topics_index_html_slim__794116442067868133_18700'
+2020-09-19T03:07:31.218594+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=powerful-taiga-87200.herokuapp.com request_id=6929f5ef-1393-4f84-901d-71bc6d687b5b fwd="150.249.202.186" dyno=web.1 connect=0ms service=6ms status=200 bytes=143 protocol=https
+2020-09-19T03:07:38.546223+00:00 app[web.1]: I, [2020-09-19T03:07:38.546106 #4]  INFO -- : [33d1dc1e-d799-40c4-8576-e8652af14dd5] Started GET "/" for 150.249.202.186 at 2020-09-19 03:07:38 +0000
+2020-09-19T03:07:38.547193+00:00 app[web.1]: I, [2020-09-19T03:07:38.547108 #4]  INFO -- : [33d1dc1e-d799-40c4-8576-e8652af14dd5] Processing by PagesController#index as HTML
+2020-09-19T03:07:38.549866+00:00 app[web.1]: I, [2020-09-19T03:07:38.549793 #4]  INFO -- : [33d1dc1e-d799-40c4-8576-e8652af14dd5]   Rendering pages/index.html.slim within layouts/application
+2020-09-19T03:07:38.555635+00:00 app[web.1]: I, [2020-09-19T03:07:38.555548 #4]  INFO -- : [33d1dc1e-d799-40c4-8576-e8652af14dd5]   Rendered pages/index.html.slim within layouts/application (5.6ms)
+2020-09-19T03:07:38.565147+00:00 heroku[router]: at=info method=GET path="/" host=powerful-taiga-87200.herokuapp.com request_id=33d1dc1e-d799-40c4-8576-e8652af14dd5 fwd="150.249.202.186" dyno=web.1 connect=0ms service=24ms status=200 bytes=2645 protocol=https
+2020-09-19T03:07:38.565738+00:00 app[web.1]: D, [2020-09-19T03:07:38.565649 #4] DEBUG -- : [33d1dc1e-d799-40c4-8576-e8652af14dd5]   [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+2020-09-19T03:07:38.566505+00:00 app[web.1]: I, [2020-09-19T03:07:38.566443 #4]  INFO -- : [33d1dc1e-d799-40c4-8576-e8652af14dd5] Completed 200 OK in 19ms (Views: 16.6ms | ActiveRecord: 1.2ms)
+2020-09-19T03:07:38.566943+00:00 app[web.1]: /app/vendor/bundle/ruby/2.7.0/gems/actionpack-5.2.4.4/lib/action_dispatch/middleware/cookies.rb:647: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+2020-09-19T03:07:38.566945+00:00 app[web.1]: /app/vendor/bundle/ruby/2.7.0/gems/activesupport-5.2.4.4/lib/active_support/message_encryptor.rb:150: warning: The called method `encrypt_and_sign' is defined here
+2020-09-19T03:07:38.567007+00:00 app[web.1]: /app/vendor/bundle/ruby/2.7.0/gems/activesupport-5.2.4.4/lib/active_support/message_encryptor.rb:175: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+2020-09-19T03:07:38.567008+00:00 app[web.1]: /app/vendor/bundle/ruby/2.7.0/gems/activesupport-5.2.4.4/lib/active_support/messages/metadata.rb:17: warning: The called method `wrap' is defined here
+2020-09-19T03:07:38.878842+00:00 heroku[router]: at=info method=GET path="/assets/application-e64185d163dd0fb9c221940cb1cadb44df4f39af703383b50419291584e3d37c.js" host=powerful-taiga-87200.herokuapp.com request_id=3e8357f8-acf2-4a2c-9f8c-2318d8f606af fwd="150.249.202.186" dyno=web.1 connect=0ms service=4ms status=200 bytes=63724 protocol=https
+2020-09-19T03:07:38.880993+00:00 heroku[router]: at=info method=GET path="/assets/application-1b0948004bf98caebb8fd1e4e17ca38f786b70491d85c29e23d31d6f0a7ea9dc.css" host=powerful-taiga-87200.herokuapp.com request_id=67bfe46b-7bd9-413e-9cd1-5c575e30b81d fwd="150.249.202.186" dyno=web.1 connect=0ms service=7ms status=200 bytes=20897 protocol=https
+2020-09-19T03:07:39.592578+00:00 app[web.1]: I, [2020-09-19T03:07:39.592470 #4]  INFO -- : [172a1066-5fca-4da3-be0a-19bc95f756f3] Started GET "/assets/bg-top.png" for 150.249.202.186 at 2020-09-19 03:07:39 +0000
+2020-09-19T03:07:39.593109+00:00 app[web.1]: F, [2020-09-19T03:07:39.593052 #4] FATAL -- : [172a1066-5fca-4da3-be0a-19bc95f756f3]
+2020-09-19T03:07:39.593166+00:00 app[web.1]: F, [2020-09-19T03:07:39.593116 #4] FATAL -- : [172a1066-5fca-4da3-be0a-19bc95f756f3] ActionController::RoutingError (No route matches [GET] "/assets/bg-top.png"):
+2020-09-19T03:07:39.593203+00:00 app[web.1]: F, [2020-09-19T03:07:39.593163 #4] FATAL -- : [172a1066-5fca-4da3-be0a-19bc95f756f3]
+2020-09-19T03:07:39.593302+00:00 app[web.1]: F, [2020-09-19T03:07:39.593252 #4] FATAL -- : [172a1066-5fca-4da3-be0a-19bc95f756f3] vendor/bundle/ruby/2.7.0/gems/actionpack-5.2.4.4/lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+2020-09-19T03:07:39.593302+00:00 app[web.1]: [172a1066-5fca-4da3-be0a-19bc95f756f3] vendor/bundle/ruby/2.7.0/gems/actionpack-5.2.4.4/lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+2020-09-19T03:07:39.593305+00:00 app[web.1]: [172a1066-5fca-4da3-be0a-19bc95f756f3] vendor/bundle/ruby/2.7.0/gems/railties-5.2.4.4/lib/rails/rack/logger.rb:38:in `call_app'
+2020-09-19T03:07:39.593306+00:00 app[web.1]: [172a1066-5fca-4da3-be0a-19bc95f756f3] vendor/bundle/ruby/2.7.0/gems/railties-5.2.4.4/lib/rails/rack/logger.rb:26:in `block in call'
+2020-09-19T03:07:39.593306+00:00 app[web.1]: [172a1066-5fca-4da3-be0a-19bc95f756f3] vendor/bundle/ruby/2.7.0/gems/activesupport-5.2.4.4/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+2020-09-19T03:07:39.593306+00:00 app[web.1]: [172a1066-5fca-4da3-be0a-19bc95f756f3] vendor/bundle/ruby/2.7.0/gems/activesupport-5.2.4.4/lib/active_support/tagged_logging.rb:28:in `tagged'
+2020-09-19T03:07:39.593307+00:00 app[web.1]: [172a1066-5fca-4da3-be0a-19bc95f756f3] vendor/bundle/ruby/2.7.0/gems/activesupport-5.2.4.4/lib/active_support/tagged_logging.rb:71:in `tagged'
+2020-09-19T03:07:39.593307+00:00 app[web.1]: [172a1066-5fca-4da3-be0a-19bc95f756f3] vendor/bundle/ruby/2.7.0/gems/railties-5.2.4.4/lib/rails/rack/logger.rb:26:in `call'
+2020-09-19T03:07:39.593307+00:00 app[web.1]: [172a1066-5fca-4da3-be0a-19bc95f756f3] vendor/bundle/ruby/2.7.0/gems/actionpack-5.2.4.4/lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+2020-09-19T03:07:39.593308+00:00 app[web.1]: [172a1066-5fca-4da3-be0a-19bc95f756f3] vendor/bundle/ruby/2.7.0/gems/actionpack-5.2.4.4/lib/action_dispatch/middleware/request_id.rb:27:in `call'
+2020-09-19T03:07:39.593308+00:00 app[web.1]: [172a1066-5fca-4da3-be0a-19bc95f756f3] vendor/bundle/ruby/2.7.0/gems/rack-2.2.3/lib/rack/method_override.rb:24:in `call'
+2020-09-19T03:07:39.593308+00:00 app[web.1]: [172a1066-5fca-4da3-be0a-19bc95f756f3] vendor/bundle/ruby/2.7.0/gems/rack-2.2.3/lib/rack/runtime.rb:22:in `call'
+2020-09-19T03:07:39.593309+00:00 app[web.1]: [172a1066-5fca-4da3-be0a-19bc95f756f3] vendor/bundle/ruby/2.7.0/gems/activesupport-5.2.4.4/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+2020-09-19T03:07:39.593309+00:00 app[web.1]: [172a1066-5fca-4da3-be0a-19bc95f756f3] vendor/bundle/ruby/2.7.0/gems/actionpack-5.2.4.4/lib/action_dispatch/middleware/executor.rb:14:in `call'
+2020-09-19T03:07:39.593310+00:00 app[web.1]: [172a1066-5fca-4da3-be0a-19bc95f756f3] vendor/bundle/ruby/2.7.0/gems/actionpack-5.2.4.4/lib/action_dispatch/middleware/static.rb:127:in `call'
+2020-09-19T03:07:39.593310+00:00 app[web.1]: [172a1066-5fca-4da3-be0a-19bc95f756f3] vendor/bundle/ruby/2.7.0/gems/rack-2.2.3/lib/rack/sendfile.rb:110:in `call'
+2020-09-19T03:07:39.593310+00:00 app[web.1]: [172a1066-5fca-4da3-be0a-19bc95f756f3] vendor/bundle/ruby/2.7.0/gems/railties-5.2.4.4/lib/rails/engine.rb:524:in `call'
+2020-09-19T03:07:39.593310+00:00 app[web.1]: [172a1066-5fca-4da3-be0a-19bc95f756f3] vendor/bundle/ruby/2.7.0/gems/puma-3.12.6/lib/puma/configuration.rb:227:in `call'
+2020-09-19T03:07:39.593310+00:00 app[web.1]: [172a1066-5fca-4da3-be0a-19bc95f756f3] vendor/bundle/ruby/2.7.0/gems/puma-3.12.6/lib/puma/server.rb:706:in `handle_request'
+2020-09-19T03:07:39.593311+00:00 app[web.1]: [172a1066-5fca-4da3-be0a-19bc95f756f3] vendor/bundle/ruby/2.7.0/gems/puma-3.12.6/lib/puma/server.rb:476:in `process_client'
+2020-09-19T03:07:39.593311+00:00 app[web.1]: [172a1066-5fca-4da3-be0a-19bc95f756f3] vendor/bundle/ruby/2.7.0/gems/puma-3.12.6/lib/puma/server.rb:334:in `block in run'
+2020-09-19T03:07:39.593311+00:00 app[web.1]: [172a1066-5fca-4da3-be0a-19bc95f756f3] vendor/bundle/ruby/2.7.0/gems/puma-3.12.6/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+2020-09-19T03:07:39.595272+00:00 heroku[router]: at=info method=GET path="/assets/bg-top.png" host=powerful-taiga-87200.herokuapp.com request_id=172a1066-5fca-4da3-be0a-19bc95f756f3 fwd="150.249.202.186" dyno=web.1 connect=0ms service=2ms status=404 bytes=1902 protocol=https
+2020-09-19T03:07:39.828889+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=powerful-taiga-87200.herokuapp.com request_id=606434ea-7283-4b42-a605-7e72768cb318 fwd="150.249.202.186" dyno=web.1 connect=0ms service=1ms status=304 bytes=48 protocol=https
+2020-09-19T03:07:45.635127+00:00 app[web.1]: I, [2020-09-19T03:07:45.635035 #4]  INFO -- : [f614ae72-6d86-43e4-871f-70ffb5c802a6] Started GET "/favorites/index" for 150.249.202.186 at 2020-09-19 03:07:45 +0000
+2020-09-19T03:07:45.635954+00:00 app[web.1]: I, [2020-09-19T03:07:45.635865 #4]  INFO -- : [f614ae72-6d86-43e4-871f-70ffb5c802a6] Processing by FavoritesController#index as HTML
+2020-09-19T03:07:45.639378+00:00 app[web.1]: D, [2020-09-19T03:07:45.639298 #4] DEBUG -- : [f614ae72-6d86-43e4-871f-70ffb5c802a6]   [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+2020-09-19T03:07:45.641361+00:00 app[web.1]: I, [2020-09-19T03:07:45.641286 #4]  INFO -- : [f614ae72-6d86-43e4-871f-70ffb5c802a6]   Rendering favorites/index.html.slim within layouts/application
+2020-09-19T03:07:45.650054+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=powerful-taiga-87200.herokuapp.com request_id=fe6a78ff-6fba-483c-b52d-b210e8564b0f fwd="150.249.202.186" dyno=web.1 connect=0ms service=3ms status=304 bytes=48 protocol=https
+2020-09-19T03:07:45.650156+00:00 app[web.1]: I, [2020-09-19T03:07:45.650053 #4]  INFO -- : [f614ae72-6d86-43e4-871f-70ffb5c802a6]   Rendered favorites/index.html.slim within layouts/application (8.6ms)
+2020-09-19T03:07:45.650600+00:00 app[web.1]: I, [2020-09-19T03:07:45.650488 #4]  INFO -- : [f614ae72-6d86-43e4-871f-70ffb5c802a6] Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.2ms)
+2020-09-19T03:07:45.650950+00:00 heroku[router]: at=info method=GET path="/favorites/index" host=powerful-taiga-87200.herokuapp.com request_id=f614ae72-6d86-43e4-871f-70ffb5c802a6 fwd="150.249.202.186" dyno=web.1 connect=0ms service=19ms status=500 bytes=1827 protocol=https
+2020-09-19T03:07:45.651532+00:00 app[web.1]: F, [2020-09-19T03:07:45.651454 #4] FATAL -- : [f614ae72-6d86-43e4-871f-70ffb5c802a6]
+2020-09-19T03:07:45.651774+00:00 app[web.1]: F, [2020-09-19T03:07:45.651703 #4] FATAL -- : [f614ae72-6d86-43e4-871f-70ffb5c802a6] ActionView::Template::Error (PG::UndefinedFunction: ERROR:  operator does not exist: bigint = character varying
+2020-09-19T03:07:45.651775+00:00 app[web.1]: LINE 1: ... "topics" INNER JOIN "favorites" ON "topics"."id" = "favorit...
+2020-09-19T03:07:45.651776+00:00 app[web.1]: ^
+2020-09-19T03:07:45.651794+00:00 app[web.1]: HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2020-09-19T03:07:45.651795+00:00 app[web.1]: : SELECT "topics".* FROM "topics" INNER JOIN "favorites" ON "topics"."id" = "favorites"."topic_id" WHERE "favorites"."user_id" = $1):
+2020-09-19T03:07:45.652002+00:00 app[web.1]: F, [2020-09-19T03:07:45.651939 #4] FATAL -- : [f614ae72-6d86-43e4-871f-70ffb5c802a6]     1: .topic-index-wrapper
+2020-09-19T03:07:45.652003+00:00 app[web.1]: [f614ae72-6d86-43e4-871f-70ffb5c802a6]     2:   .container
+2020-09-19T03:07:45.652003+00:00 app[web.1]: [f614ae72-6d86-43e4-871f-70ffb5c802a6]     3:     - @favorite_topics.each do |topic|
+2020-09-19T03:07:45.652004+00:00 app[web.1]: [f614ae72-6d86-43e4-871f-70ffb5c802a6]     4:       .row
+2020-09-19T03:07:45.652004+00:00 app[web.1]: [f614ae72-6d86-43e4-871f-70ffb5c802a6]     5:         .col-md-6.col-md-offset-3
+2020-09-19T03:07:45.652004+00:00 app[web.1]: [f614ae72-6d86-43e4-871f-70ffb5c802a6]     6:           .topic-index-single
+2020-09-19T03:07:45.652169+00:00 app[web.1]: F, [2020-09-19T03:07:45.652107 #4] FATAL -- : [f614ae72-6d86-43e4-871f-70ffb5c802a6]
+2020-09-19T03:07:45.652261+00:00 app[web.1]: F, [2020-09-19T03:07:45.652201 #4] FATAL -- : [f614ae72-6d86-43e4-871f-70ffb5c802a6] app/views/favorites/index.html.slim:3:in `_app_views_favorites_index_html_slim___3967939320661550401_19520'
